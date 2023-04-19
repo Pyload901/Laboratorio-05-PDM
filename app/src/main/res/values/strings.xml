@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Laboratorio05Diaz</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="billboard">Billboard</string>
+    <string name="new_movie">New Movie</string>
+    <string name="name_hint">Name</string>
+    <string name="category_hint">Category</string>
+    <string name="description_hint">Description</string>
+    <string name="calification_hint">Calification</string>
+    <string name="star_wars">Star Wars episodio 3: la venganza</string>
+</resources>

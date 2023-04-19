@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/billboard">
+
+    <fragment
+        android:id="@+id/billboard"
+        android:name="com.labos.laboratorio05diaz.Billboard"
+        android:label="fragment_billboard"
+        tools:layout="@layout/fragment_billboard" >
+        <action
+            android:id="@+id/action_billboard_to_movie_description"
+            app:destination="@id/movie_description" />
+        <action
+            android:id="@+id/action_billboard_to_add_new_movie"
+            app:destination="@id/add_new_movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_new_movie"
+        android:name="com.labos.laboratorio05diaz.AddNewMovie"
+        android:label="fragment_add_new_movie"
+        tools:layout="@layout/fragment_add_new_movie" />
+    <fragment
+        android:id="@+id/movie_description"
+        android:name="com.labos.laboratorio05diaz.MovieDescription"
+        android:label="fragment_movie_description"
+        tools:layout="@layout/fragment_movie_description" />
+</navigation>
