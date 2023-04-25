@@ -8,4 +8,7 @@
     <string name="description_hint">Description</string>
     <string name="calification_hint">Calification</string>
     <string name="star_wars">Star Wars episodio 3: la venganza</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_a_new_movie_content">Add a new movie</string>
 </resources>

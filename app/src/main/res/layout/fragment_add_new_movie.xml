@@ -19,7 +19,7 @@
             android:textAlignment="center"
             android:textColor="@color/primary_text_color"
             android:textSize="@dimen/large_text"
-            app:layout_constraintBottom_toTopOf="@+id/editText"
+            app:layout_constraintBottom_toTopOf="@+id/name_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
@@ -38,14 +38,14 @@
             android:padding="@dimen/pad"
             android:textColor="@color/primary_text_color"
             android:textColorHint="@color/primary_text_color"
-            app:layout_constraintBottom_toTopOf="@+id/editText3"
+            app:layout_constraintBottom_toTopOf="@+id/category_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/category_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
@@ -56,14 +56,14 @@
             android:padding="@dimen/pad"
             android:textColor="@color/primary_text_color"
             android:textColorHint="@color/primary_text_color"
-            app:layout_constraintBottom_toTopOf="@+id/editText2"
+            app:layout_constraintBottom_toTopOf="@+id/description_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/description_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
@@ -74,14 +74,14 @@
             android:padding="@dimen/pad"
             android:textColor="@color/primary_text_color"
             android:textColorHint="@color/primary_text_color"
-            app:layout_constraintBottom_toTopOf="@+id/editText4"
+            app:layout_constraintBottom_toTopOf="@+id/calification_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintTop_toBottomOf="@+id/category_input" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/calification_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
@@ -96,7 +96,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/description_input" />
 
         <Button
             android:id="@+id/action_submit"
@@ -109,6 +109,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintTop_toBottomOf="@+id/calification_input" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
