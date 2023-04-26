@@ -1,0 +1,6 @@
+1) ¿En qué consiste el patrón de diseño Repository?
+
+Consiste en tener una capa que se encarga de interactuar con la fuente de datos, esto ayuda a poder tener diferentes fuentes de datos aislando esta lógica en esta capa para que lo que tiene que ver con la ui no tenga que interactuar con las fuentes
+
+2) ¿Qué es el ViewModel?
+El viewModel es un contenedor que me permite tener encapsulada la lógica de la vista, el viewModel se encarga de comunicarse con el repositorio y devolver datos a la vista para que la vista no tenga que realizar estas tareas
