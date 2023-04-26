@@ -10,10 +10,10 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 
-class CardMovieAdapter: RecyclerView.Adapter<CardMovieAdapter.ViewHolder>() {
+class CardMovieAdapter(private val onClickMovie : (Movie) -> Unit): RecyclerView.Adapter<CardMovieAdapter.ViewHolder>() {
     private var movies : List<Movie> ?= null
      class ViewHolder(var view : View) : RecyclerView.ViewHolder(view) {
-        fun bind(movie : Movie) {
+        fun bind(movie : Movie, onClickMovie: (Movie) -> Unit) {
 
             val card_movie_name = view.findViewById<TextView>(R.id.card_movie_name)
             val card_movie_photo = view.findViewById<ImageView>(R.id.card_movie_photo)
@@ -21,6 +21,9 @@ class CardMovieAdapter: RecyclerView.Adapter<CardMovieAdapter.ViewHolder>() {
 
             card_movie_name.text = movie.nombre
             card_movie_calification.text = "9.8"
+            view.setOnClickListener{
+                onClickMovie(movie)
+            }
         }
     }
 
@@ -36,7 +39,7 @@ class CardMovieAdapter: RecyclerView.Adapter<CardMovieAdapter.ViewHolder>() {
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         movies?.let {
-            holder.bind(it[position])
+            holder.bind(it[position], onClickMovie)
         }
     }
 

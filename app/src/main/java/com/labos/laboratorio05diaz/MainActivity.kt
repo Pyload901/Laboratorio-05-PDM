@@ -10,7 +10,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var biding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         biding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
     }
