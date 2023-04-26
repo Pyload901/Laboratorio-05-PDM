@@ -1,10 +1,12 @@
-package com.labos.laboratorio05diaz
+package com.labos.laboratorio05diaz.ui
 
-import android.app.ActivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import com.labos.laboratorio05diaz.R
 import com.labos.laboratorio05diaz.databinding.ActivityMainBinding
+import com.labos.laboratorio05diaz.ui.movie.MovieViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var biding: ActivityMainBinding

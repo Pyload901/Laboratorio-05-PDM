@@ -1,20 +1,19 @@
-package com.labos.laboratorio05diaz
+package com.labos.laboratorio05diaz.ui.movie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.labos.laboratorio05diaz.R
+import com.labos.laboratorio05diaz.data.model.movies
 import com.labos.laboratorio05diaz.databinding.FragmentBillboardBinding
 
 
-class Billboard : Fragment() {
+class BillboardFragment : Fragment() {
     private lateinit var binding : FragmentBillboardBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +33,7 @@ class Billboard : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.recyclerCardMovie.adapter = adapter
         adapter.setMovies(movies)
-        //addListener(view)*/
+        addListener(view)
     }
     private fun addListener(view : View) {
         binding.actionAdd.setOnClickListener {

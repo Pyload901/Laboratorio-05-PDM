@@ -1,114 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddNewMovie">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.labos.laboratorio05diaz.ui.movie.MovieViewModel" />
+    </data>
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_layout">
+        tools:context=".ui.movie.AddNewMovieFragment">
 
-        <TextView
-            android:id="@+id/textView2"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/new_movie"
-            android:textAlignment="center"
-            android:textColor="@color/primary_text_color"
-            android:textSize="@dimen/large_text"
-            app:layout_constraintBottom_toTopOf="@+id/name_input"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            android:layout_height="match_parent"
+            android:background="@color/background_layout">
 
-        <EditText
-            android:id="@+id/name_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gap"
-            android:layout_marginBottom="@dimen/gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:hint="@string/name_hint"
-            android:padding="@dimen/pad"
-            android:textColor="@color/primary_text_color"
-            android:textColorHint="@color/primary_text_color"
-            app:layout_constraintBottom_toTopOf="@+id/category_input"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/new_movie"
+                android:textAlignment="center"
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/large_text"
+                app:layout_constraintBottom_toTopOf="@+id/name_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
 
-        <EditText
-            android:id="@+id/category_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gap"
-            android:layout_marginBottom="@dimen/gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:hint="@string/category_hint"
-            android:padding="@dimen/pad"
-            android:textColor="@color/primary_text_color"
-            android:textColorHint="@color/primary_text_color"
-            app:layout_constraintBottom_toTopOf="@+id/description_input"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name_input" />
+            <EditText
+                android:id="@+id/name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:layout_marginBottom="@dimen/gap"
+                android:background="@color/cardLayout"
+                android:backgroundTint="@color/cardLayout"
+                android:hint="@string/name_hint"
+                android:padding="@dimen/pad"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                app:layout_constraintBottom_toTopOf="@+id/category_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <EditText
-            android:id="@+id/description_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gap"
-            android:layout_marginBottom="@dimen/gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:hint="@string/description_hint"
-            android:padding="@dimen/pad"
-            android:textColor="@color/primary_text_color"
-            android:textColorHint="@color/primary_text_color"
-            app:layout_constraintBottom_toTopOf="@+id/calification_input"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/category_input" />
+            <EditText
+                android:id="@+id/category_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:layout_marginBottom="@dimen/gap"
+                android:background="@color/cardLayout"
+                android:backgroundTint="@color/cardLayout"
+                android:hint="@string/category_hint"
+                android:padding="@dimen/pad"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                app:layout_constraintBottom_toTopOf="@+id/description_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
-        <EditText
-            android:id="@+id/calification_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gap"
-            android:layout_marginBottom="@dimen/gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:hint="@string/calification_hint"
-            android:padding="@dimen/pad"
-            android:textColor="@color/primary_text_color"
-            android:textColorHint="@color/primary_text_color"
-            app:layout_constraintBottom_toTopOf="@+id/action_submit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_input" />
+            <EditText
+                android:id="@+id/description_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:layout_marginBottom="@dimen/gap"
+                android:background="@color/cardLayout"
+                android:backgroundTint="@color/cardLayout"
+                android:hint="@string/description_hint"
+                android:padding="@dimen/pad"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                app:layout_constraintBottom_toTopOf="@+id/calification_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/category_input" />
 
-        <Button
-            android:id="@+id/action_submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/buttonColor"
-            android:text="Submit"
-            android:textColor="@color/secondary_text_color"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calification_input" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+            <EditText
+                android:id="@+id/calification_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:layout_marginBottom="@dimen/gap"
+                android:background="@color/cardLayout"
+                android:backgroundTint="@color/cardLayout"
+                android:hint="@string/calification_hint"
+                android:padding="@dimen/pad"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                app:layout_constraintBottom_toTopOf="@+id/action_submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description_input" />
+
+            <Button
+                android:id="@+id/action_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/buttonColor"
+                android:text="Submit"
+                android:textColor="@color/secondary_text_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calification_input" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
