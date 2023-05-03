@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.labos.laboratorio05diaz.R
@@ -15,6 +16,9 @@ import com.labos.laboratorio05diaz.databinding.FragmentBillboardBinding
 
 class BillboardFragment : Fragment() {
     private lateinit var binding : FragmentBillboardBinding
+    private val viewModel: MovieViewModel by activityViewModels {
+        MovieViewModel.Factory
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,6 +35,8 @@ class BillboardFragment : Fragment() {
             findNavController().navigate(R.id.action_billboard_to_movie_description)
         }
         binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
+
         binding.recyclerCardMovie.adapter = adapter
         adapter.setMovies(movies)
         addListener(view)

@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.labos.laboratorio05diaz.R
-import com.labos.laboratorio05diaz.data.model.MovieModel
 import com.labos.laboratorio05diaz.databinding.FragmentAddNewMovieBinding
 
 class AddNewMovieFragment : Fragment() {
@@ -36,22 +35,30 @@ class AddNewMovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
-        addListener()
+        configBinding()
+        observeStatus()
     }
-    fun addListener () {
-        binding.actionSubmit.setOnClickListener {
-            var movie = MovieModel(
-                binding.nameInput.text.toString(),
-                binding.categoryInput.text.toString(),
-                binding.descriptionInput.text.toString(),
-                binding.calificationInput.text.toString()
-            )
-            viewModel.addMovie(movie)
-            Toast.makeText(this.context, "You added a movie!", Toast.LENGTH_SHORT).show()
-            findNavController().popBackStack()
+
+    private fun observeStatus() {
+        viewModel.status.observe(viewLifecycleOwner) {status->
+            when {
+                status.equals(MovieViewModel.MOVIE_CREATED) -> {
+                    Toast.makeText(this.context, status.toString(), Toast.LENGTH_SHORT).show()
+                    Log.d("APP_TAG", status)
+                    Log.d("APP_TAG", viewModel.getMovies().toString())
+                    viewModel.clearStatus()
+                    viewModel.clearData()
+                    findNavController().popBackStack()
+                }
+                status.equals(MovieViewModel.WRONG_DATA) -> {
+                    Toast.makeText(this.context, status.toString(), Toast.LENGTH_SHORT).show()
+                }
+            }
         }
+    }
+    private fun configBinding() {
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
     }
 
 }
