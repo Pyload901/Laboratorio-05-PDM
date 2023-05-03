@@ -52,6 +52,7 @@ class AddNewMovieFragment : Fragment() {
                 }
                 status.equals(MovieViewModel.WRONG_DATA) -> {
                     Toast.makeText(this.context, status.toString(), Toast.LENGTH_SHORT).show()
+                    Log.d("APP_TAG", status)
                 }
             }
         }
