@@ -1,6 +1,9 @@
-1) ¿En qué consiste el patrón de diseño Repository?
+1. ¿Cuál es la principal ventaja de usar RecyclerView?
+La principal ventaja es que optimiza la aplicación haciendo que el uso de recursos para la creación de elementos sea mínimo
 
-Consiste en tener una capa que se encarga de interactuar con la fuente de datos, esto ayuda a poder tener diferentes fuentes de datos aislando esta lógica en esta capa para que lo que tiene que ver con la ui no tenga que interactuar con las fuentes
+2. Menciona los componentes de RecyclerView y la función que tiene cada uno de ellos
+List Item: este componente es la vista que se mostrará por cada elementos creado, se trata de una plantilla que se poblará con los datos que se desee enviar
 
-2) ¿Qué es el ViewModel?
-El viewModel es un contenedor que me permite tener encapsulada la lógica de la vista, el viewModel se encarga de comunicarse con el repositorio y devolver datos a la vista para que la vista no tenga que realizar estas tareas
+ViewHolder: este se encarga de guardar una referencia de cada view creada, de esta forma se asegura de poder reutilizar los componentes cuando sea necesario
+
+Adapter: este componente sirve como un adaptador para que los datos se coloquen correctamente en la plantilla, es el que le dice al modelo de datos como debe mostrarse
