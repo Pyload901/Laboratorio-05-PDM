@@ -1,4 +1,4 @@
-package com.labos.laboratorio05diaz.ui.movie
+package com.labos.laboratorio05diaz.ui.movie.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -50,6 +50,12 @@ class MovieViewModel(val repository: MovieRepository): ViewModel() {
         category.value = ""
         description.value = ""
         qualification.value = ""
+    }
+    fun setSelectedMovie(movie: MovieModel) {
+        name.value = movie.name
+        category.value = movie.category
+        description.value = movie.description
+        qualification.value = movie.qualification
     }
     companion object {
         val Factory = viewModelFactory {

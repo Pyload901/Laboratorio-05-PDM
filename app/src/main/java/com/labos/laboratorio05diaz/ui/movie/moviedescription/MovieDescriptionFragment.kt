@@ -1,4 +1,4 @@
-package com.labos.laboratorio05diaz.ui.movie
+package com.labos.laboratorio05diaz.ui.movie.moviedescription
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.labos.laboratorio05diaz.R
 import com.labos.laboratorio05diaz.databinding.FragmentMovieDescriptionBinding
+import com.labos.laboratorio05diaz.ui.movie.viewmodel.MovieViewModel
 
 
 class MovieDescriptionFragment : Fragment() {
-    private val viewModel:MovieViewModel by activityViewModels {
+    private val viewModel: MovieViewModel by activityViewModels {
         MovieViewModel.Factory
     }
     private lateinit var binding: FragmentMovieDescriptionBinding
@@ -24,7 +25,7 @@ class MovieDescriptionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_movie_description, container, false)
         return binding.root
@@ -32,8 +33,12 @@ class MovieDescriptionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.viewModel?.clearData()
+    }
 }

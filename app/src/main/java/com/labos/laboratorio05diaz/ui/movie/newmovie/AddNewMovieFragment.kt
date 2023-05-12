@@ -1,4 +1,4 @@
-package com.labos.laboratorio05diaz.ui.movie
+package com.labos.laboratorio05diaz.ui.movie.newmovie
 
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.labos.laboratorio05diaz.R
 import com.labos.laboratorio05diaz.databinding.FragmentAddNewMovieBinding
+import com.labos.laboratorio05diaz.ui.movie.viewmodel.MovieViewModel
 
 class AddNewMovieFragment : Fragment() {
     private lateinit var binding: FragmentAddNewMovieBinding

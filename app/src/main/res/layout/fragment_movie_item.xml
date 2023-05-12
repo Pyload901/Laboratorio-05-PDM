@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ui.movie.CardMovieFragment"
-    android:layout_margin="@dimen/gap">
+    xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.cardview.widget.CardView
-        android:backgroundTint="@color/cardLayout"
+        android:id="@+id/card_movie_item"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/card_height">
+        android:layout_height="@dimen/card_height"
+        android:layout_margin="@dimen/gap"
+        android:backgroundTint="@color/cardLayout"
+        app:cardCornerRadius="@dimen/corner_radius"
+        tools:context=".ui.movie.billboard.recyclerview.MovieItemFragment">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/pad"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/pad">
 
             <ImageView
                 android:id="@+id/card_movie_photo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/star_wars" />
+
+                android:src="@drawable/noimage" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
-                android:layout_weight="2"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/gap">
 
                 <TextView
                     android:id="@+id/card_movie_name"
+                    tools:text="NOMBRE DE PELICULA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/star_wars"
                     android:textColor="@color/primary_text_color"
                     android:textSize="@dimen/normal_text"
                     app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +47,7 @@
                     android:id="@+id/card_movie_calification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9.8"
+                    tools:text="9.9"
                     android:textColor="@color/calification"
                     android:textSize="@dimen/large_text"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -52,5 +56,4 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-</FrameLayout>
+</layout>

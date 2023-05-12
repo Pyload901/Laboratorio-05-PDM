@@ -2,11 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.movie.BillboardFragment">
+    tools:context=".ui.movie.billboard.BillboardFragment">
     <data>
         <variable
             name="viewModel"
-            type="com.labos.laboratorio05diaz.ui.movie.MovieViewModel" />
+            type="com.labos.laboratorio05diaz.ui.movie.viewmodel.MovieViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:itemCount="5"
-            tools:listitem="@layout/fragment_card_movie"
+            tools:listitem="@layout/fragment_movie_item"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
